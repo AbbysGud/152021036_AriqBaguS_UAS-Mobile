@@ -1,0 +1,9 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SuitmediaInternApp" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <item name="colorPrimary">@color/btn_blue</item>
+    </style>
+
+    <style name="Theme.SuitmediaInternApp" parent="Base.Theme.SuitmediaInternApp" />
+</resources>
