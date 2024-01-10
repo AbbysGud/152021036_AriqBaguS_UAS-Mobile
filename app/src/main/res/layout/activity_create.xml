@@ -25,7 +25,7 @@
             android:textAlignment="center"/>
         <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp"/>
+            android:layout_height="20dp"/>
         <EditText
             android:id="@+id/create_name"
             android:layout_width="match_parent"
@@ -90,5 +90,37 @@
             android:text="ADD DATA"
             android:textSize="16sp"
             android:textColor="@color/white"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="15dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Click"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/create_btn_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Here "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to Go Back to CRUD Page"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

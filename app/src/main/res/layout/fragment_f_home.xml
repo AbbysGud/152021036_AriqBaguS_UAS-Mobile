@@ -5,10 +5,78 @@
     android:layout_height="match_parent"
     tools:context=".fragment.fHome">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/home_image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:gravity="center"
+            android:text="EXPLORE RANDOM MATH \nFUNCTION THAT'S \nCREATED USING KOTLIN"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/home_image"
+            android:orientation="vertical">
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/home_btn_calculate"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_round"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:drawableStart="@drawable/baseline_calculate_24"
+                android:drawablePadding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="CALCULATOR"
+                android:textSize="22sp"
+                android:textColor="@color/white"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/home_btn_money"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_round"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:drawableStart="@drawable/baseline_attach_money_24"
+                android:drawablePadding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="CONVERT MONEY"
+                android:textSize="22sp"
+                android:textColor="@color/white"/>
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/home_btn_bmi"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/btn_round"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="30dp"
+                android:drawableStart="@drawable/baseline_monitor_weight_24"
+                android:drawablePadding="8dp"
+                android:gravity="start|center_vertical"
+                android:layout_gravity="center_vertical"
+                android:paddingStart="30dp"
+                android:text="BMI (Body Mass Index)"
+                android:textSize="22sp"
+                android:textColor="@color/white"/>
+        </LinearLayout>
+    </RelativeLayout>
 
 </FrameLayout>

@@ -2,4 +2,22 @@
     <string name="app_name">UasApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="operatorHitung">
+        <item>Add (+)</item>
+        <item>Substract (-)</item>
+        <item>Divide (/)</item>
+        <item>Times (x)</item>
+    </string-array>
+    <string-array name="operatorKonversi1">
+        <item>RP</item>
+        <item>Dollar</item>
+        <item>Euro</item>
+        <item>Yen</item>
+    </string-array>
+    <string-array name="operatorKonversi2">
+        <item>RP</item>
+        <item>Dollar</item>
+        <item>Euro</item>
+        <item>Yen</item>
+    </string-array>
 </resources>

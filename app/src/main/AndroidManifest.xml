@@ -8,13 +8,22 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@drawable/logo"
+        android:icon="@drawable/itenas"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/logo"
+        android:roundIcon="@drawable/itenas"
         android:supportsRtl="true"
         android:theme="@style/Theme.UasApp"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".math.BMI"
+            android:exported="false" />
+        <activity
+            android:name=".math.Money"
+            android:exported="false" />
+        <activity
+            android:name=".math.Calculator"
+            android:exported="false" />
         <activity
             android:name=".book.Update"
             android:exported="false" />

@@ -7,6 +7,7 @@ import android.util.Log
 import android.widget.Button
 import android.widget.DatePicker
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.uasapp.Fragment
 import com.example.uasapp.R
@@ -71,6 +72,13 @@ class Create : AppCompatActivity() {
                     Log.e("API_ERROR", "Update request failed: ${t.message}")
                 }
             })
+        }
+
+        val btnBack = findViewById<TextView>(R.id.create_btn_back)
+        btnBack.setOnClickListener {
+            val intent = Intent(this, Fragment::class.java)
+            intent.putExtra("TARGET_FRAGMENT", "fCrud")
+            startActivity(intent)
         }
     }
 

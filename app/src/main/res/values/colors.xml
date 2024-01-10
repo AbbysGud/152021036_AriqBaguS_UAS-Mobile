@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="hint">#6867775C</color>
     <color name="btn_blue">#2B637B</color>
+    <color name="blue">#5FA6BD</color>
+    <color name="darker_white">#F5F5F5</color>
 </resources>
