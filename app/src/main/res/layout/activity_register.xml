@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".First"
+    tools:context=".Register"
     android:background="@drawable/background"
     android:gravity="center"
     android:paddingHorizontal="32dp">
@@ -18,14 +18,23 @@
             android:layout_width="116dp"
             android:layout_height="116dp"
             android:src="@drawable/ic_photo"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:text="Registration Page"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
         <Space
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
         <EditText
-            android:id="@+id/first_edt_nama"
+            android:id="@+id/reg_edt_email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
+            android:hint="Email"
             android:textColorHint="@color/hint"
             android:textSize="16sp"
             android:background="@drawable/edt_round"
@@ -35,10 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="25dp"/>
         <EditText
-            android:id="@+id/first_edt_palindrom"
+            android:id="@+id/reg_edt_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Palindrome"
+            android:hint="Password"
             android:textColorHint="@color/hint"
             android:textSize="16sp"
             android:background="@drawable/edt_round"
@@ -47,23 +56,44 @@
             android:layout_width="match_parent"
             android:layout_height="50dp"/>
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/first_btn_check"
+            android:id="@+id/reg_btn_register"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/btn_round"
-            android:text="CHECK"
+            android:text="REGISTER"
             android:textSize="16sp"
             android:textColor="@color/white"/>
         <Space
             android:layout_width="match_parent"
             android:layout_height="15dp"/>
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/first_btn_next"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_round"
-            android:text="NEXT"
-            android:textSize="16sp"
-            android:textColor="@color/white"/>
+            android:orientation="horizontal"
+            android:textAlignment="center"
+            android:gravity="center">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Already have an account? Click"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+            <TextView
+                android:id="@+id/reg_txt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" Here "
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="to Login"
+                android:textColor="@color/white"
+                android:textSize="16sp"/>
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>

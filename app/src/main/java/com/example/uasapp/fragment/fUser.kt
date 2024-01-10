@@ -1,16 +1,17 @@
-package com.example.suitmediainternapp
+package com.example.uasapp.fragment
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
-import android.widget.ImageView
+import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.example.suitmediainternapp.data.ResultUsers
-import com.example.suitmediainternapp.UsersAdapter
+import com.example.uasapp.R
+import com.example.uasapp.UsersAdapter
+import com.example.uasapp.data.ResultUsers
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -18,8 +19,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
-
-class Third : AppCompatActivity() {
+class fUser : Fragment() {
 
     //region inisiasi variabel global
     private val BASE_URL = "https://reqres.in/api/"
@@ -43,20 +43,17 @@ class Third : AppCompatActivity() {
     }
     //endregion
 
-    //region fungsi onCreate (ketika halaman dibuat)
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_third)
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        // Inflate the layout for this fragment
+        val view = inflater.inflate(R.layout.fragment_f_user, container, false)
 
-        //region inisiasi semua objek
-        recyclerView = findViewById(R.id.rvUser)
-        recyclerView.layoutManager = LinearLayoutManager(this)
-        refresh = findViewById(R.id.refresh)
-        emptyText = findViewById(R.id.third_txt_empty)
-        nama_1 = intent.getStringExtra("txt_nama")
-        full_name = intent.getStringExtra("txt_nama2")
-        val btn_back = findViewById<ImageView>(R.id.third_btn_back)
-        //endregion
+        recyclerView = view.findViewById(R.id.rvUser)
+        recyclerView.layoutManager = LinearLayoutManager(requireActivity())
+        refresh = view.findViewById(R.id.refresh)
+        emptyText = view.findViewById(R.id.third_txt_empty)
 
         //memanggil fungsi ntuk setup Recycler View (tempat menyimpan user)
         setUpRecyclerView()
@@ -69,19 +66,11 @@ class Third : AppCompatActivity() {
         }
         //endregion
 
-        //region ketika tombol back diklik
-        btn_back.setOnClickListener {
-            val pindah = Intent(this, Second::class.java)
-            pindah.putExtra("txt_nama2", full_name)
-            pindah.putExtra("txt_nama", nama_1)
-            startActivity(pindah)
-        }
-        //endregion
-
         //memasukkan data User dari API
         getAllUser()
+
+        return view
     }
-    //endregion
 
     //region setUpRecyclerView
     private fun setUpRecyclerView() {
@@ -118,10 +107,6 @@ class Third : AppCompatActivity() {
     //region fungsi yang menangani ketika user klik salah satu item
     fun handleUserClick(firstName: String?, lastName: String?) {
         full_name = "$firstName $lastName"
-        val pindah = Intent(this, Second::class.java)
-        pindah.putExtra("txt_nama2", full_name)
-        pindah.putExtra("txt_nama", nama_1)
-        startActivity(pindah)
     }
     //endregion
 
@@ -190,4 +175,5 @@ class Third : AppCompatActivity() {
         }
     }
     //endregion
+
 }

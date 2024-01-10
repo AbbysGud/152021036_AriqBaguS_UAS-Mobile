@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SuitmediaInternApp"
+rootProject.name = "UasApp"
 include(":app")
  

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "586909301325",
+    "project_id": "uas-itenas",
+    "storage_bucket": "uas-itenas.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:586909301325:android:7e06c42d82889922e4ba04",
+        "android_client_info": {
+          "package_name": "com.example.uasapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjD7GnHCYOJMriH3s_uCgXGAPIKDqK3Jk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

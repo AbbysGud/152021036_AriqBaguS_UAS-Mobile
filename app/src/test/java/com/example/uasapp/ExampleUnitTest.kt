@@ -1,4 +1,4 @@
-package com.example.suitmediainternapp
+package com.example.uasapp
 
 import org.junit.Test
 

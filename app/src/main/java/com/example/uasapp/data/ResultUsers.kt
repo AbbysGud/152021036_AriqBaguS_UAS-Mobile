@@ -1,4 +1,4 @@
-package com.example.suitmediainternapp.data
+package com.example.uasapp.data
 
 import com.google.gson.annotations.SerializedName
 

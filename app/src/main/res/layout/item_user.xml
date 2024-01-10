@@ -21,7 +21,7 @@
                 android:id="@+id/avatar"
                 android:layout_height="match_parent"
                 android:layout_width="match_parent"
-                android:src="@drawable/profil"
+                android:src="@drawable/baseline_face_24"
                 android:scaleType="centerCrop"/>
         </androidx.cardview.widget.CardView>
         <LinearLayout

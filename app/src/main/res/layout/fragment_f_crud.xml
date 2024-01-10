@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.fCrud">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/crud_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="CRUD PAGE"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/crud_btn_add"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/crud_image"
+            android:layout_alignParentRight="true"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/btn_round"
+            android:text="ADD DATA"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/crud_btn_add"/>
+
+<!--        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout-->
+<!--            android:id="@+id/crud_refresh"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:layout_below="@id/crud_btn_add">-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/crud_rv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/crud_btn_add"
+            android:paddingHorizontal="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+<!--        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>-->
+    </RelativeLayout>
+
+</FrameLayout>

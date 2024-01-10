@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".book.Create"
+    android:background="@drawable/background"
+    android:gravity="center"
+    android:paddingHorizontal="32dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingVertical="16dp"
+            android:text="ADD A BOOK"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="50dp"/>
+        <EditText
+            android:id="@+id/create_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Name"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            android:background="@drawable/edt_round"
+            android:padding="16dp"
+            android:singleLine="true"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+        <EditText
+            android:id="@+id/create_author"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Author"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            android:background="@drawable/edt_round"
+            android:padding="16dp"
+            android:singleLine="true"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="25dp"/>
+        <EditText
+            android:id="@+id/create_publish"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Publish Date"
+            android:textColorHint="@color/hint"
+            android:textSize="16sp"
+            android:background="@drawable/edt_round"
+            android:padding="16dp"
+            android:singleLine="true"/>
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/create_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/btn_round"
+            android:text="ADD DATA"
+            android:textSize="16sp"
+            android:textColor="@color/white"/>
+    </LinearLayout>
+</RelativeLayout>

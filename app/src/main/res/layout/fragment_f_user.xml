@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.fUser">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/user_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/background"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:gravity="center"
+            android:text="GLOBAL API PAGE"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textAlignment="center"/>
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/refresh"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="10dp"
+            android:layout_below="@id/user_image">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvUser"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="20dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        <TextView
+            android:id="@+id/third_txt_empty"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/user_image"
+            android:text="There's currenty no User Data on the System"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:paddingHorizontal="20dp"
+            android:gravity="center"/>
+    </RelativeLayout>
+
+</FrameLayout>
