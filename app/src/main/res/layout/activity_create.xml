@@ -52,16 +52,33 @@
         <Space
             android:layout_width="match_parent"
             android:layout_height="25dp"/>
-        <EditText
-            android:id="@+id/create_publish"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Publish Date"
-            android:textColorHint="@color/hint"
-            android:textSize="16sp"
-            android:background="@drawable/edt_round"
-            android:padding="16dp"
-            android:singleLine="true"/>
+            app:contentPadding="5dp"
+            app:cardElevation="2dp"
+            app:cardCornerRadius="20dp"
+            android:layout_gravity="center">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Book Publish Date :"
+                    android:textColor="@color/black"
+                    android:padding="15dp"
+                    android:textSize="16sp"/>
+                <DatePicker
+                    android:id="@+id/create_date"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:datePickerMode = "spinner"
+                    android:calendarViewShown="false"
+                    android:background="@color/white"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"/>

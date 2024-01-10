@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -14,14 +15,16 @@ import com.example.uasapp.data.BooksItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class Update : AppCompatActivity() {
 
-    private val BASE_URL = "http://10.0.2.2:8000/api/"
     private lateinit var judulText: TextView
     private lateinit var nameText: EditText
     private lateinit var authorText: EditText
-    private lateinit var dateText: EditText
+    private lateinit var dateSpin: DatePicker
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,7 +33,7 @@ class Update : AppCompatActivity() {
         judulText = findViewById(R.id.update_txt_judul)
         nameText = findViewById(R.id.update_name)
         authorText = findViewById(R.id.update_author)
-        dateText = findViewById(R.id.update_publish)
+        dateSpin = findViewById(R.id.update_date)
 
         val btnBack = findViewById<TextView>(R.id.update_btn_back)
         btnBack.setOnClickListener {
@@ -49,7 +52,17 @@ class Update : AppCompatActivity() {
                             judulText.text = "Edit ${book.name}"
                             nameText.setText(book.name)
                             authorText.setText(book.author)
-                            dateText.setText(book.publishDate)
+                            val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+                            val date = dateFormat.parse(book.publishDate)
+
+                            date?.let {
+                                val calendar = Calendar.getInstance()
+                                calendar.time = it
+                                val year = calendar.get(Calendar.YEAR)
+                                val month = calendar.get(Calendar.MONTH)
+                                val day = calendar.get(Calendar.DAY_OF_MONTH)
+                                dateSpin.init(year, month, day, null)
+                            }
                         }
                     }
                 }
@@ -66,10 +79,10 @@ class Update : AppCompatActivity() {
         val btnUpdate = findViewById<Button>(R.id.update_btn)
         btnUpdate.setOnClickListener {
             val updatedBook = BooksItem(
-                id = bookId, // Use the bookId obtained from the intent
+                id = bookId,
                 name = nameText.text.toString(),
                 author = authorText.text.toString(),
-                publishDate = dateText.text.toString()
+                publishDate = getDateFromDatePicker(dateSpin)
             )
 
             api.updateBookDetails(bookId, updatedBook).enqueue(object : Callback<BooksItem> {
@@ -90,6 +103,17 @@ class Update : AppCompatActivity() {
             })
         }
 
+    }
 
+    private fun getDateFromDatePicker(datePicker: DatePicker): String {
+        val day = datePicker.dayOfMonth
+        val month = datePicker.month
+        val year = datePicker.year
+
+        val calendar = Calendar.getInstance()
+        calendar.set(year, month, day)
+
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        return dateFormat.format(calendar.time)
     }
 }

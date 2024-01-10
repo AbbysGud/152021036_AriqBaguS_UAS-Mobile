@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
+import android.widget.DatePicker
 import android.widget.EditText
 import android.widget.Toast
 import com.example.uasapp.Fragment
@@ -13,6 +14,9 @@ import com.example.uasapp.data.BooksItem
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.text.SimpleDateFormat
+import java.util.Calendar
+import java.util.Locale
 
 class Create : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,13 +25,16 @@ class Create : AppCompatActivity() {
 
         val edtName = findViewById<EditText>(R.id.create_name)
         val edtAuthor = findViewById<EditText>(R.id.create_author)
-        val edtPublish = findViewById<EditText>(R.id.create_publish)
+        val edtPublish = findViewById<DatePicker>(R.id.create_date)
+        val today = Calendar.getInstance()
+        edtPublish.init(today.get(Calendar.YEAR), today.get(Calendar.MONTH),
+            today.get(Calendar.DAY_OF_MONTH), null)
 
         val btnAdd = findViewById<Button>(R.id.create_btn)
         btnAdd.setOnClickListener {
             val name = edtName.text.toString()
             val author = edtAuthor.text.toString()
-            val publish = edtPublish.text.toString()
+            val publish = getDateFromDatePicker(edtPublish)
 
             if(name.isEmpty()){
                 edtName.error = "Book Name's Have to be Filled"
@@ -38,12 +45,6 @@ class Create : AppCompatActivity() {
             if(author.isEmpty()){
                 edtAuthor.error = "Book Author's Have to be Filled"
                 edtAuthor.requestFocus()
-                return@setOnClickListener
-            }
-
-            if(publish.isEmpty()){
-                edtPublish.error = "Book Publish Date Have to be Filled"
-                edtPublish.requestFocus()
                 return@setOnClickListener
             }
 
@@ -71,5 +72,17 @@ class Create : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    private fun getDateFromDatePicker(datePicker: DatePicker): String {
+        val day = datePicker.dayOfMonth
+        val month = datePicker.month
+        val year = datePicker.year
+
+        val calendar = Calendar.getInstance()
+        calendar.set(year, month, day)
+
+        val dateFormat = SimpleDateFormat("yyyy-MM-dd", Locale.getDefault())
+        return dateFormat.format(calendar.time)
     }
 }
